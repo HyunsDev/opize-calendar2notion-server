@@ -18,7 +18,11 @@
         "test:watch": "jest --watch",
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-        "test:e2e": "jest --config ./test/jest-e2e.json"
+        "test:e2e": "jest --config ./test/jest-e2e.json",
+        "docker:build": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t opize/opize-calendar2notion-server:latest . --push",
+        "docker:pull": "docker pull opize/opize-calendar2notion-server:latest",
+        "docker:stop": "docker stop opize-calendar2notion-server || true && docker rm opize-calendar2notion-server || true",
+        "docker:start": "docker run -it -d --env-file .env --name opize-calendar2notion-server --network host opize/opize-calendar2notion-server:latest"
     },
     "dependencies": {
         "@hyunsdev/discord-webhook": "^1.0.2",
