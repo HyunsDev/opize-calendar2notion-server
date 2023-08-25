@@ -3,7 +3,7 @@ import { Auth } from 'src/submodules/user/decorator/auth.decorator';
 
 import { SyncbotLogService } from './log.service';
 
-@Controller('admin/syncbots')
+@Controller('syncbots')
 @Auth('admin')
 export class SyncBotLogController {
     constructor(private readonly syncbotLogService: SyncbotLogService) {}
