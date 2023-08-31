@@ -159,7 +159,7 @@ export class UserConnectService {
             workspace.accessToken = res.data.access_token;
             workspace.botId = res.data.bot_id;
             workspace.tokenType = res.data.token_type;
-            await this.notionWorkspaceRepository.save(workspace);
+            workspace = await this.notionWorkspaceRepository.save(workspace);
 
             await this.usersRepository.update(
                 {
