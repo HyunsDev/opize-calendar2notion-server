@@ -447,7 +447,7 @@ export class Migration1Service {
             throw new Migration1Error(
                 'MIGRATE_USER_NOT_FOUND',
                 '유저 정보를 찾을 수 없어요.',
-                '기존에 게정이 있는지 확인해주시고, 없다면 새로운 데이터베이스를 이용하거나 오른쪽 아래 버튼을 통해 개발자에게 연락해주세요.',
+                '기존에 계정이 있는지 확인해주시고, 없다면 새로운 데이터베이스를 이용하거나 오른쪽 아래 버튼을 통해 개발자에게 연락해주세요.',
                 HttpStatus.NOT_FOUND,
             );
         }
