@@ -51,22 +51,4 @@ export class UserController {
     async reset(@User() user: UserEntity) {
         return await this.userService.reset(user);
     }
-
-    @Post(':id/calendar')
-    @Auth()
-    async addCalendar(
-        @User() user: UserEntity,
-        @Body() addCalendarDto: AddCalendarDto,
-    ) {
-        return await this.userService.addCalendar(user, addCalendarDto);
-    }
-
-    @Delete(':id/calendar/:calendarId')
-    @Auth()
-    async removeCalendar(
-        @User() user: UserEntity,
-        @Param('calendarId') calendarId: string,
-    ) {
-        return await this.userService.removeCalendar(user, +calendarId);
-    }
 }
