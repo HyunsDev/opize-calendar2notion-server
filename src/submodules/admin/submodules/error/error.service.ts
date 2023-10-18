@@ -17,10 +17,18 @@ export class AdminErrorService {
         pageSize: number,
         where?: {
             userId?: number;
+            errorCode?: string;
+            isUserConnected?: boolean;
         },
     ) {
         const errors = await this.errorLogRepository.find({
-            where,
+            where: {
+                user: {
+                    id: where?.userId,
+                    isConnected: where?.isUserConnected,
+                },
+                code: where?.errorCode,
+            },
             order: {
                 createdAt: {
                     direction: 'DESC',
