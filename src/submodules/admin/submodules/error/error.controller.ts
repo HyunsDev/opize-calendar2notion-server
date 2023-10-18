@@ -16,6 +16,13 @@ export class AdminErrorController {
             +dto.pageSize,
             {
                 userId: dto.userId ? +dto.userId : undefined,
+                errorCode: dto.errorCode,
+                isUserConnected:
+                    dto.isUserConnected === 'true'
+                        ? true
+                        : dto.isUserConnected === 'false'
+                        ? false
+                        : undefined,
             },
         );
     }

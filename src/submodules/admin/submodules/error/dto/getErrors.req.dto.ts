@@ -12,4 +12,12 @@ export class GetErrorsReqDto {
     @IsOptional()
     @IsString()
     userId: string;
+
+    @IsOptional()
+    @IsString()
+    errorCode: string;
+
+    @IsOptional()
+    @IsString()
+    isUserConnected: string;
 }
