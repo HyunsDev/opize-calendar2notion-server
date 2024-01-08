@@ -1,9 +1,4 @@
-import {
-    BadRequestException,
-    Injectable,
-    InternalServerErrorException,
-    NotFoundException,
-} from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import {
     CalendarEntity,
@@ -11,12 +6,10 @@ import {
     UserEntity,
 } from '@opize/calendar2notion-object';
 import * as dayjs from 'dayjs';
-import { calendar_v3 } from 'googleapis';
 import { GoogleCalendarClient } from 'src/common/api-client/googleCalendar.client';
 import { getGoogleCalendarTokensByUser } from 'src/common/api-client/googleCalendarToken';
-import { Not, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 
-import { AddCalendarDto } from './dto/add-calendar.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindOneUserResDto } from './dto/find-one-user.res.dto';
 import { UpdateUserDto } from './dto/update-user.dto';

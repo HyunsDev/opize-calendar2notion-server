@@ -3,9 +3,9 @@ import { UserEntity } from '@opize/calendar2notion-object';
 
 import { Auth } from '../../decorator/auth.decorator';
 import { User } from '../../decorator/user.decorator';
-import { AddCalendarDto } from '../../dto/add-calendar.dto';
 
 import { UserCalendarService } from './calendar.service';
+import { AddCalendarDto } from './dto/add-calendar.dto';
 
 @Controller('users/:userId/calendar')
 @Auth()

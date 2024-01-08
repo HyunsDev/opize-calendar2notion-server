@@ -15,7 +15,7 @@ import { GoogleCalendarClient } from 'src/common/api-client/googleCalendar.clien
 import { getGoogleCalendarTokensByUser } from 'src/common/api-client/googleCalendarToken';
 import { Not, Repository } from 'typeorm';
 
-import { AddCalendarDto } from '../../dto/add-calendar.dto';
+import { AddCalendarDto } from './dto/add-calendar.dto';
 
 @Injectable()
 export class UserCalendarService {
