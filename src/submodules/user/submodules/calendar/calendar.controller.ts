@@ -12,6 +12,14 @@ import { AddCalendarDto } from './dto/add-calendar.dto';
 export class UserCalendarController {
     constructor(private readonly userCalendarService: UserCalendarService) {}
 
+    @Post(':calendarId/rename')
+    async renameCalendar(
+        @User() user: UserEntity,
+        @Param('calendarId') calendarId: string,
+    ) {
+        return await this.userCalendarService.renameCalendar(user, +calendarId);
+    }
+
     @Post('')
     async addCalendar(
         @User() user: UserEntity,

@@ -822,10 +822,10 @@
     consola "^2.15.0"
     node-fetch "^2.6.1"
 
-"@opize/calendar2notion-object@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@opize/calendar2notion-object/-/calendar2notion-object-2.3.0.tgz#89eb7b2529c62d12de6c6856d8d67e3bf088a22b"
-  integrity sha512-rbDG0A6XhPuArLXIIUO/Wn0vgLKklHEMzDJX8ocZIIubLvaxa3BmTo7+IPCxYwjYHIdmvzaOZtQMdkbPUXDYrw==
+"@opize/calendar2notion-object@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@opize/calendar2notion-object/-/calendar2notion-object-2.3.1.tgz#74eaa19ed56ee12914a02aaee981e94dc498d08f"
+  integrity sha512-DlkT1D1VJVT3P6pCYt02nkK7C1klaFzQ2weJO28yb/BbW1UTcscodhtXJL+g64m8+uoE4zKR/3xMgNpOZdlZog==
   dependencies:
     class-transformer "^0.5.1"
     class-validator "^0.14.0"
