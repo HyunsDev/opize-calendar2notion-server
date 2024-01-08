@@ -3,14 +3,22 @@ import { UserEntity } from '@opize/calendar2notion-object';
 
 import { Auth } from '../../decorator/auth.decorator';
 import { User } from '../../decorator/user.decorator';
-import { AddCalendarDto } from '../../dto/add-calendar.dto';
 
 import { UserCalendarService } from './calendar.service';
+import { AddCalendarDto } from './dto/add-calendar.dto';
 
 @Controller('users/:userId/calendar')
 @Auth()
 export class UserCalendarController {
     constructor(private readonly userCalendarService: UserCalendarService) {}
+
+    @Post(':calendarId/rename')
+    async renameCalendar(
+        @User() user: UserEntity,
+        @Param('calendarId') calendarId: string,
+    ) {
+        return await this.userCalendarService.renameCalendar(user, +calendarId);
+    }
 
     @Post('')
     async addCalendar(

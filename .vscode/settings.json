@@ -2,6 +2,6 @@
     "files.eol": "\n",
     "prettier.endOfLine": "auto",
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll": "explicit"
     }
 }
