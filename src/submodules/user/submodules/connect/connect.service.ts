@@ -104,13 +104,19 @@ export class UserConnectService {
             });
         }
 
-        user.googleAccessToken = googleTokens.tokens.access_token;
-        user.googleRefreshToken = googleTokens.tokens.refresh_token;
-        user.googleId = userProfile.id;
-        user.googleEmail = userProfile.email;
-        user.googleRedirectUrlVersion = googleCallbackVersion;
-        user.syncYear = dayjs().year();
-        user = await this.usersRepository.save(user);
+        await this.usersRepository.update(
+            {
+                id: user.id,
+            },
+            {
+                googleAccessToken: googleTokens.tokens.access_token,
+                googleRefreshToken: googleTokens.tokens.refresh_token,
+                googleId: userProfile.id,
+                googleEmail: userProfile.email,
+                googleRedirectUrlVersion: googleCallbackVersion,
+                syncYear: user.syncYear === 0 ? 0 : dayjs().year(),
+            },
+        );
 
         return;
     }
