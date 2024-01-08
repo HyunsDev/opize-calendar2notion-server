@@ -114,9 +114,10 @@ export class UserConnectService {
                 googleId: userProfile.id,
                 googleEmail: userProfile.email,
                 googleRedirectUrlVersion: googleCallbackVersion,
-                syncYear: dayjs().year(),
+                syncYear: user.syncYear === 0 ? 0 : dayjs().year(),
             },
         );
+
         return;
     }
 
